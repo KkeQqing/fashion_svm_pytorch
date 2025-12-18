@@ -1,0 +1,83 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# =========================
+# PyTorch / Machine Learning
+# =========================
+*.pth
+*.pt
+*.onnx
+checkpoints/
+runs/               # TensorBoard logs (common in PyTorch)
+logs/
+models/
+results/
+output/
+
+# =========================
+# Conda
+# =========================
+# 忽略整个 conda 环境（如果你在项目内创建了 envs/）
+envs/
+# 或者更安全的方式：只忽略名为 'env' 或常见名的环境
+myenv/
+venv/
+ENV/
+
+# 如果你用 conda env export 导出环境，请保留 environment.yml，但不要提交实际环境目录
+
+# =========================
+# PyCharm
+# =========================
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+*.ipynb
+
+# =========================
+# OS & Editors
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/            # 如果你不希望共享 VS Code 设置（可选）
+*.swp
+*.swo
+
+# =========================
+# Data (optional - 取决于是否提交数据)
+# =========================
+# 如果你的数据集很大或来自外部，请取消注释以下行
+# data/
+# dataset/
+# *.csv
+# *.npy
+# *.npz
