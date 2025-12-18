@@ -6,7 +6,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
 build/
 develop-eggs/
 dist/
@@ -23,33 +22,42 @@ wheels/
 .installed.cfg
 *.egg
 
+# Virtual environments (common names)
+venv/
+env/
+ENV/
+myenv/
+.env
+
 # =========================
 # PyTorch / Machine Learning
 # =========================
+# Model checkpoints and weights
 *.pth
 *.pt
 *.onnx
 checkpoints/
-runs/               # TensorBoard logs (common in PyTorch)
+
+# Training logs and outputs
+runs/               # TensorBoard logs (PyTorch Lightning, etc.)
 logs/
-models/
 results/
 output/
+
+# NOTE: Avoid ignoring entire 'models/' or 'data/' by default,
+# as you might want to commit small model definitions or configs.
+# If you do store large binaries there, ignore specific subdirs instead.
 
 # =========================
 # Conda
 # =========================
-# 忽略整个 conda 环境（如果你在项目内创建了 envs/）
+# Ignore local conda environments (if stored in project dir)
 envs/
-# 或者更安全的方式：只忽略名为 'env' 或常见名的环境
-myenv/
-venv/
-ENV/
 
-# 如果你用 conda env export 导出环境，请保留 environment.yml，但不要提交实际环境目录
+# Do NOT ignore environment.yml or conda-lock.yml — keep them in version control!
 
 # =========================
-# PyCharm
+# IDE: PyCharm / IntelliJ IDEA
 # =========================
 .idea/
 *.iml
@@ -63,21 +71,26 @@ ENV/
 *.ipynb
 
 # =========================
-# OS & Editors
+# Editors and OS
 # =========================
 .DS_Store
 Thumbs.db
 desktop.ini
-.vscode/            # 如果你不希望共享 VS Code 设置（可选）
 *.swp
 *.swo
 
+# VS Code (optional — uncomment if you don't share settings)
+# .vscode/
+
 # =========================
-# Data (optional - 取决于是否提交数据)
+# Data Files (Optional — UNCOMMENT if you NEVER commit data)
 # =========================
-# 如果你的数据集很大或来自外部，请取消注释以下行
+# WARNING: Only enable if your data is external or too large for Git.
+#
 # data/
 # dataset/
 # *.csv
 # *.npy
 # *.npz
+# *.h5
+# *.parquet
