@@ -3,7 +3,6 @@ from torchvision import datasets, transforms
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix, classification_report
-import numpy as np
 
 # 定义转换
 transform = transforms.Compose([transforms.ToTensor(),
@@ -59,7 +58,7 @@ plt.ylabel('True Label')
 plt.tight_layout()
 plt.show()
 
-# 2. 分类报告（打印 + 可视化为条形图）
+# 2. 分类报告
 print("\nClassification Report:\n")
 report = classification_report(y_test, predictions, target_names=datasets.FashionMNIST.classes, output_dict=True)
 print(classification_report(y_test, predictions, target_names=datasets.FashionMNIST.classes))
@@ -78,7 +77,6 @@ plt.tight_layout()
 plt.show()
 
 # 3. 可视化部分测试图像及预测结果
-# 需要原始图像（未归一化），所以重新加载测试集（不带 Normalize）
 transform_raw = transforms.ToTensor()  # 仅转为张量，不归一化
 testset_raw = datasets.FashionMNIST('~/.pytorch/F_MNIST_data/', download=True, train=False, transform=transform_raw)
 testloader_raw = torch.utils.data.DataLoader(testset_raw, batch_size=64, shuffle=False)
