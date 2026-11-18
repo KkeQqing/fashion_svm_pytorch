@@ -94,3 +94,5 @@ desktop.ini
 # *.npz
 # *.h5
 # *.parquet
+# IDE 本地配置
+.idea/
